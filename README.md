@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+## Qlabs-remote-Raspberry-pi-button
 
-You can use the [editor on GitHub](https://github.com/Strodow/Qlabs-remote-Raspberry-pi-button/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This program is made for a specific use, but it should work well as a base if you are getting started using OSC with Qlab.
+If you are interested in it's use Qlab is running in the back of the room and on stage an actor needs to push a doorbell. In order to get the timeing perfectt using an arduino zero connected to a doorbell button, when pushed tells Qlab to play a specific cue.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Qlab communication
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+If you want to quickly see how it connects:
 
 ```markdown
-Syntax highlighted code block
+import OSC
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+while 1:
+	a = raw_input("press enter to execute cue:")
+	client = OSC.OSCClient()
+	msg = OSC.OSCMessage()
+	msg.setAddress("/cue/3/start")
+	client.sendto(msg, ('192.168.100.17', 53000))
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Strodow/Qlabs-remote-Raspberry-pi-button/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
