@@ -5,7 +5,7 @@ Writen in Python
 
 ------
 Libraries in use:
-pyOSC (only compat with python 2.x)
+pyOSC (compat with python 2.x)
 
 ------
 So Qlabs can use 3 methods for remotely controlling the program:
@@ -28,39 +28,4 @@ The raspberry pi will use the library to send osc data to port 53000
 ------------------
 Version 0.1
 - The Program will run on a raspberry pi sending on port 53000 and listening on port 53001 UDP
-- The program will send /cue/{cue_number}/command {number}
-
-Command Numbers for /cue/{cue_number}/command {number}
-1  - GO
-2  - STOP
-3  - RESUME
-4  - TIMED_GO
-5  - LOAD
-6  - SET
-7  - FIRE
-8  - ALL_OFF
-9  - RESTORE
-10 - RESET
-11 - GO_OFF
-16 - GO/JAM_CLOCK
-17 - STANDBY_+
-18 - STANDBY_-
-19 - SEQUENCE_+
-20 - SEQUENCE_-
-21 - START_CLOCK
-22 - STOP_CLOCK
-23 - ZERO_CLOCK
-24 - SET_CLOCK
-25 - MTC_CHASE_ON
-26 - MTC_CHASE_OFF
-27 - OPEN_CUE_LIST
-28 - CLOSE_CUE_LIST
-29 - OPEN_CUE_PATH
-30 - CLOSE_CUE_PATH
-
-
-
-
-Future Update features
-- query to see what the current cue is to eliminate misfires
-- Get Que unique ID
+- The program will send /cue/{cue_number}/start
