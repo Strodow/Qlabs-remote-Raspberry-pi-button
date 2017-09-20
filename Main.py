@@ -3,11 +3,11 @@ import OSC
 
 
 while 1:
-	a = raw_input("press enter to ring the door bell:")
+	a = raw_input("press enter to execute cue:")
 	client = OSC.OSCClient()
 	msg = OSC.OSCMessage()
 	msg.setAddress("/cue/3/start")
-	client.sendto(msg, ('192.168.43.24', 53000))
+	client.sendto(msg, ('192.168.100.17', 53000))
 
 
 '''
