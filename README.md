@@ -1,7 +1,7 @@
 ## Qlabs-remote-Raspberry-pi-button
 
 This program is made for a specific use, but it should work well as a base if you are getting started using OSC with Qlab.
-If you are interested in it's use Qlab is running in the back of the room and on stage an actor needs to push a doorbell. In order to get the timeing perfectt using an arduino zero connected to a doorbell button, when pushed tells Qlab to play a specific cue.
+If you are interested in it's use we have a computer running Qlab in the back of the room and on stage an actor needs to push a doorbell. In order to get the timeing perfectt I am using an arduino zero connected to a doorbell button, when pushed it tells Qlab to play a specific cue.
 
 ### Qlab communication
 
