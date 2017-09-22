@@ -1,10 +1,12 @@
 import OSC
-
+import RPi.GPIO as GPIO
 
 ### Configuration ###
 
 #needs to be a string
 ip = "192.168.1.1"
+
+cueNumber = 1
 #DebugWS (Debug with sending data from computer)
 DebugWS = 0
 #DebugWoS (Debug without sending data from computer)
@@ -71,9 +73,17 @@ if __name__ == '__main__':
 	if (not DebugWoS and DebugWS):
 		print("--Program has started without debugging--")
 
-		"""
-		Raspberry Pi code
-		"""
+		GPIO.setmode(GPIO.BOARD)
+		GPIO.setup(8,GPIO.IN)
+
+		while 1:
+			try:
+				if(GPIO.input(8) == 1):
+					print("Contact")
+					qSend(qStart(int(cueNumber)),ip)
+			except KeyboardInterrupt:
+				break
+		
 
 		print("Program has ended")
 
