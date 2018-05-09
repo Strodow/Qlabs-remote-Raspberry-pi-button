@@ -15,7 +15,7 @@ while 1:
 	a = raw_input("press enter to execute cue:")
 	client = OSC.OSCClient()
 	msg = OSC.OSCMessage()
-	msg.setAddress("/cue/3/start")
+	msg.setAddress("/cue/"+ a +"/start") # "/cue/1/start"
 	client.sendto(msg, ('192.168.100.17', 53000))
 
 ```
